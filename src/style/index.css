@@ -1,0 +1,112 @@
+:root {
+  --app-bg: linear-gradient(135deg, #f4efe7 0%, #dbe7f0 100%);
+  --panel-bg: rgba(255, 255, 255, 0.72);
+  --card-bg: rgba(255, 255, 255, 0.88);
+  --text-main: #18212b;
+  --text-soft: #5e6875;
+  --accent: #c86b3c;
+  --accent-dark: #8f4725;
+  --shadow-soft: 0 18px 50px rgba(24, 33, 43, 0.12);
+  --shadow-card: 0 14px 35px rgba(24, 33, 43, 0.12);
+  --radius-xl: 28px;
+  --radius-lg: 22px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text-main);
+  background: var(--app-bg);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.hero-panel {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: var(--radius-xl);
+  background: var(--panel-bg);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-text {
+  max-width: 560px;
+  color: var(--text-soft);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.actor-card {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--card-bg);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(10px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.actor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 50px rgba(24, 33, 43, 0.18);
+}
+
+.actor-image-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.actor-image {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+
+.actor-card:hover .actor-image {
+  transform: scale(1.03);
+  transition: transform 0.4s ease;
+}
+
+.actor-year {
+  padding: 0.65rem 0.85rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+.actor-bio {
+  color: var(--text-soft);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.actor-award {
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(200, 107, 60, 0.14);
+  color: var(--accent-dark);
+  font-weight: 600;
+  border: 1px solid rgba(200, 107, 60, 0.18);
+}
+
+@media (max-width: 767px) {
+  .hero-panel {
+    padding: 2rem 1.25rem;
+  }
+
+  .actor-image {
+    height: 300px;
+  }
+}
